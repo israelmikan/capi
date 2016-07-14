@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="validate.js"></script>    
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+var why=localStorage."located";
+
+
+if (localStorage.getItem("located") === null) {
+  //...
+div_show();
+
+
+}else{
+
+document.getElementById("result").innerHTML = localStorage.getItem("fullnames");
+    document.getElementById("result").innerHTML = localStorage.getItem("loction");
+
+}
+
+
+</script>
+
+<title>Login</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+function testResults (form) {
+
+    var who = form.names.value;
+
+    var where = form.location.value;
+    if(who ==' '){
+        
+        alert("Name Canot be Empty");
+        
+    }
+    
+   
+     var person=who;  
+     var located=where;  
+    
+  console.log( person );
+  localStorage.setItem( 'person', person );
+  console.log( localStorage.getItem( 'person' ) );
+
+   
+  console.log( located );
+  localStorage.setItem( 'located', located );
+  console.log( localStorage.getItem( 'located' ) );
+    
+
+
+
+    document.getElementById("result").innerHTML = "Sorry, your Device does not support  Storage...";
+
+
+
+}
+if (localStorage.getItem("person") !== null) {
+  //...
+window.location.assign("index.html")
+
+
+}
+</SCRIPT>
+
+<link href="popout.css" rel="stylesheet">
+<script>
+// Validating Empty Field
+function check_empty() {
+
+if (document.getElementById('name').value == "" || document.getElementById('locaion').value == "" || document.getElementById('msg').value == "") {
+alert("Fill All Fields !");
+} else {
+document.getElementById('form').submit();
+alert("Form Submitted Successfully...");
+}
+}
+//Function To Display Popup
+function div_show() {
+document.getElementById('abc').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide(){
+document.getElementById('abc').style.display = "none";
+    window.location.assign("index.html")
+}
+
+
+</script>
+
+
+</head>
+<!-- Body Starts Here -->
+<body id="body" style="overflow:hidden;" onLoad="div_show();">
+<div id="abc">
+<!-- Popup Div Starts Here -->
+<div id="popupContact">
+<!-- Contact Us Form -->
+<form action="#" id="form"  name="form">
+<img id="close" src="close.png" onclick ="div_hide()">
+<h2>Join Capital fans App</h2>
+<hr>
+<input id="name" name="names" placeholder=" Fan Name" type="text" required>
+<input id="location" name="location" placeholder="Location" type="text"  required>
+<br>
+<br>
+    <br>
+    <br>
+<INPUT TYPE="submit" id="submit" NAME="button" Value="Join Now" onClick="testResults(this.form)">
+</form>
+</div>
+<!-- Popup Div Ends Here -->
+</div>
+<!-- Display Popup Button -->
+
+
+</body>
+<!-- Body Ends Here -->
+</html>
